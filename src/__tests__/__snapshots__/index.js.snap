@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty object renders references 1`] = `
+"<p>This is an abbreviation: <abbr title=\\"HyperText Markup Language\\">HTML</abbr>.</p>
+"
+`;
+
+exports[`expandFirst renders references 1`] = `
+"<p>This is an abbreviation: <abbr title=\\"HyperText Markup Language\\">HTML</abbr>.</p>
+"
+`;
+
+exports[`no-config renders references 1`] = `
+"<p>This is an abbreviation: <abbr title=\\"HyperText Markup Language\\">HTML</abbr>.</p>
+"
+`;

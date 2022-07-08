@@ -1,0 +1,32 @@
+{
+  "name": "micromark-extension-abbr",
+  "version": "1.0.0",
+  "description": "micromark extension to support abbreviations",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulieScanlon/micromark-extension-abbr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulieScanlon/micromark-extension-abbr/issues"
+  },
+  "homepage": "https://github.com/PaulieScanlon/micromark-extension-abbr#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.6",
+    "dedent": "^0.7.0",
+    "jest": "^28.1.2"
+  },
+  "dependencies": {
+    "mdast-util-from-markdown": "^1.2.0",
+    "mdast-util-to-markdown": "^1.3.0",
+    "micromark": "^3.0.10",
+    "micromark-extension-directive": "^2.1.1"
+  }
+}
