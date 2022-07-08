@@ -6,8 +6,6 @@ import { toMarkdown } from 'mdast-util-to-markdown';
 
 function extension(text, options) {
   const opts = options || {};
-  const expandFirst = opts.expandFirst;
-
   function matchReference(string) {
     return Boolean(string.match(/\[*.*?\]/g));
   }
@@ -99,6 +97,7 @@ function extension(text, options) {
     }
 
     const HTML = micromark(MD, {
+      ...opts,
       extensions: [directive()],
       htmlExtensions: [directiveHtml({ abbr })]
     });
