@@ -5,42 +5,35 @@ import { directive, directiveHtml } from 'micromark-extension-directive';
 
 import micromarkAbbr from '../../src/index';
 
-it('no-config renders references', () => {
-  const contents = micromarkAbbr(
-    dedent`
-      This is an abbreviation: HTML.
+const configToTest = {
+  'no-config': undefined,
+  'empty object': {},
+  expandFirst: { expandFirst: true }
+};
 
-      *[HTML]: HyperText Markup Language
-    `
-  );
+for (const [configName, config] of Object.entries(configToTest)) {
+  it(`${configName} renders references`, () => {
+    const contents = micromarkAbbr(
+      dedent`
+        This is an abbreviation: HTML.
+        ref and REFERENCE should be ignored.
+  
+        *[HTML]: HyperText Markup Language
+      `,
+      config
+    );
+    expect(contents).toMatchSnapshot();
+  });
 
-  expect(contents).toMatchSnapshot();
-});
-
-it('empty object renders references', () => {
-  const contents = micromarkAbbr(
-    dedent`
-      This is an abbreviation: HTML.
-
-      *[HTML]: HyperText Markup Language
-    `,
-    {}
-  );
-
-  expect(contents).toMatchSnapshot();
-});
-
-it('expandFirst renders references', () => {
-  const contents = micromarkAbbr(
-    dedent`
-      This is an abbreviation: HTML.
-
-      *[HTML]: HyperText Markup Language
-    `,
-    {
-      expandFirst: true
-    }
-  );
-
-  expect(contents).toMatchSnapshot();
-});
+  it.skip(`${configName} renders references`, () => {
+    const contents = micromarkAbbr(
+      dedent`
+        This is a link abbreviation: [REF](http://example.com).
+  
+        *[REF]: Reference
+      `,
+      config
+    );
+    expect(contents).toMatchSnapshot();
+  });
+}
