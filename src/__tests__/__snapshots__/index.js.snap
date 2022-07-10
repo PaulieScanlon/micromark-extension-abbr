@@ -8,7 +8,7 @@ ref and REFERENCE should be ignored.</p>
 
 exports[`empty object renders references 2`] = `
 "<p>This is a link abbreviation:</p>
-<p><a href=\\"http://example.com\\"><abbr></abbr>[REF]{title=&quot;Reference&quot;}</a></p>
+<p><a href=\\"http://example.com\\"><abbr></abbr>[LINK]{title=&quot;Example dot com&quot;}</a></p>
 <p>.</p>
 "
 `;
@@ -21,7 +21,7 @@ ref and REFERENCE should be ignored.</p>
 
 exports[`expandFirst renders references 2`] = `
 "<p>This is a link abbreviation:</p>
-<p><a href=\\"http://example.com\\"><abbr></abbr>[REF]{title=&quot;Reference&quot;}</a></p>
+<p><a href=\\"http://example.com\\"><abbr></abbr>[LINK]{title=&quot;Example dot com&quot;}</a></p>
 <p>.</p>
 "
 `;
@@ -34,7 +34,7 @@ ref and REFERENCE should be ignored.</p>
 
 exports[`no-config renders references 2`] = `
 "<p>This is a link abbreviation:</p>
-<p><a href=\\"http://example.com\\"><abbr></abbr>[REF]{title=&quot;Reference&quot;}</a></p>
+<p><a href=\\"http://example.com\\"><abbr></abbr>[LINK]{title=&quot;Example dot com&quot;}</a></p>
 <p>.</p>
 "
 `;

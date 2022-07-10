@@ -25,15 +25,16 @@ for (const [configName, config] of Object.entries(configToTest)) {
     expect(contents).toMatchSnapshot();
   });
 
-  it.skip(`${configName} renders references`, () => {
+  it.skip(`${configName} renders references in links`, () => {
     const contents = micromarkAbbr(
       dedent`
-        This is a link abbreviation: [REF](http://example.com).
+        This is a link abbreviation: [LINK](http://example.com).
   
-        *[REF]: Reference
+        *[LINK]: Example dot com
       `,
       config
     );
+    console.log(contents);
     expect(contents).toMatchSnapshot();
   });
 }
